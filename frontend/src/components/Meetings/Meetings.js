@@ -1,4 +1,5 @@
-
+import React from 'react';
+import './Meetings.css';
 
 
 function Meetings() {
@@ -12,7 +13,19 @@ function Meetings() {
                 <p>Navbar dos meetings</p>
             </div>
             <div className="contentMeetings">
-                <p>Conteúdo dos meetings</p>
+                <div className="rowMeetings">
+                    <div>
+                        <p>13:00 - 14:00</p>
+                    </div>
+                    <div>
+                        <p>Título da Reunião</p>
+                    </div>
+                    <div>
+                        <button>Butão1</button>
+                        <button>Butão2</button>
+                        <button>Butão3</button>
+                    </div>
+                </div>
             </div>
         </div>
     </>
