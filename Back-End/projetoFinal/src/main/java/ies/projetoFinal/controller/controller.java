@@ -1,11 +1,13 @@
 package ies.projetoFinal.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import ies.projetoFinal.model.*;
+import ies.projetoFinal.service.*;
+
 
 @RestController
 public class controller {
@@ -14,10 +16,20 @@ public class controller {
     @Autowired
     private MeetService meetService;
 
+    // Controladores de Contatos
+    @Autowired
+    private ContactService contactService;
+
     // Lista de Reuniões
     @GetMapping("/meetings")
     public List<Meet> getMeetings() {
         return meetService.getMeetings();
+    }
+
+    // Cria reunião
+    @PostMapping("/meetings/create")
+    public @ResponseBody Map<String, String> createMeeting(@RequestBody Meet meet) {
+        return meetService.createMeeting(meet);
     }
 
     // Reunião por ID
@@ -27,14 +39,12 @@ public class controller {
     }
 
     // Exclui reunião por ID
-    @GetMapping("/meetings/{id}/delete")
+    @DeleteMapping("/meetings/{id}/delete")
     public Integer deleteMeetingById(@PathVariable int id) {
         return meetService.deleteMeetingById(id);
     }
 
-    // Controladores de Contatos
-    @Autowired
-    private ContactService contactService;
+    // ========================== Contatos ==========================
 
     // Lista de Contatos
     @GetMapping("/contacts")
@@ -42,8 +52,20 @@ public class controller {
         return contactService.getContacts();
     }
 
+    // Cria contato
+    @PostMapping("/contacts/create")
+    public @ResponseBody Map<String, String> createContact(@RequestBody Contact contact) {
+        return contactService.createContact(contact);
+    }
+
+    // Contato por ID
+    @GetMapping("/contacts/{id}")
+    public Contact getContactById(@PathVariable int id) {
+        return contactService.getContactById(id);
+    }
+
     // Exclui contato por ID
-    @GetMapping("/contacts/{id}/delete")
+    @DeleteMapping("/contacts/{id}/delete")
     public Integer deleteContactById(@PathVariable int id) {
         return contactService.deleteContactById(id);
     }
