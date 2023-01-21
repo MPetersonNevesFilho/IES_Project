@@ -12,4 +12,6 @@ public interface ContactRepository extends MongoRepository<Contact, String> {
     Contact findByName(String name);
 
     Integer deleteByName(String name);
+
+
 }

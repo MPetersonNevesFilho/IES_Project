@@ -11,8 +11,8 @@ public class Contact {
     @Id
     private int _id;
 
-    private String name;
-    private String email;
+    public String name;
+    public String email;
 
     public Contact(String name, String email) {
         this.name = name;
