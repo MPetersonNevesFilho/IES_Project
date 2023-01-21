@@ -1,31 +1,30 @@
 package ies.projetoFinal.model;
 
-import javax.annotation.Generated;
-import javax.annotation.sql.DataSourceDefinition;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.stereotype.Indexed;
-
+import org.springframework.data.mongodb.core.mapping.Document;
 import javax.persistence.*;
-
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Entity
-@Table(name = "table_meet")
+@Document("meet")
 public class Meet {
 
     @Id
-    @GeneratedValue
-    private int id;
+    private int _id;
     private String title;
     private String dia;
     private String hora;
     private String duracaoHoras;
     private String duracaoMinutos;
     private String senha;
+
+    public Meet(int _id, String title, String dia, String hora, String duracaoHoras, String duracaoMinutos, String senha) {
+        this._id = _id;
+        this.title = title;
+        this.dia = dia;
+        this.hora = hora;
+        this.duracaoHoras = duracaoHoras;
+        this.duracaoMinutos = duracaoMinutos;
+        this.senha = senha;
+    }
 
 }

@@ -1,27 +1,22 @@
 package ies.projetoFinal.model;
 
-
-import javax.annotation.Generated;
-import javax.annotation.sql.DataSourceDefinition;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.stereotype.Indexed;
-
 import javax.persistence.*;
-
-import lombok.AllArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Entity
-@Table(name = "table_contact")
+@Document("contact")
 public class Contact {
 
     @Id
-    @GeneratedValue
-    private int id;
+    private int _id;
     private String name;
     private String email;
+
+    public Contact(int _id, String name, String email) {
+        this._id = _id;
+        this.name = name;
+        this.email = email;
+    }
+
 }
