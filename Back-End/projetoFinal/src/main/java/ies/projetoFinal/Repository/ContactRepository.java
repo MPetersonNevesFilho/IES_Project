@@ -1,26 +1,16 @@
 package ies.projetoFinal.Repository;
 
 import java.util.List;
-import java.util.Map;
 
+import org.springframework.data.mongodb.repository.MongoRepository;
 import ies.projetoFinal.model.Contact;
 
-public class ContactRepository {
+public interface ContactRepository extends MongoRepository<Contact, String> {
 
-    public List<Contact> findAll() {
-        return null;
-    }
+    List<Contact> findAll();
 
-    public Map<String, String> save(Contact contact) {
-        return null;
-    }
+    Contact findById(int id);
 
-    public Contact findById(int id) {
-        return null;
-    }
-
-    public Integer deleteById(int id) {
-        return null;
-    }
+    Integer deleteById(int id);
 
 }

@@ -1,26 +1,17 @@
 package ies.projetoFinal.Repository;
 
 import java.util.List;
-import java.util.Map;
 
+import org.springframework.data.mongodb.repository.MongoRepository;
 import ies.projetoFinal.model.Meet;
 
-public class MeetRepository {
+public interface MeetRepository extends MongoRepository<Meet, String> {
 
-    public List<Meet> findAll() {
-        return null;
-    }
+    List<Meet> findAll();
 
-    public Map<String, String> save(Meet meet) {
-        return null;
-    }
+    Meet findById(int id);
 
-    public Meet findById(int id) {
-        return null;
-    }
-
-    public Integer deleteById(int id) {
-        return null;
-    }
+    Integer deleteById(int id);
 
 }
+
