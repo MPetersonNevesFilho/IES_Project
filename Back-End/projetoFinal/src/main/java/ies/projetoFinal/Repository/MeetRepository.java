@@ -9,9 +9,9 @@ public interface MeetRepository extends MongoRepository<Meet, String> {
 
     List<Meet> findAll();
 
-    Meet findById(int id);
+    Meet findByTitle(String title);
 
-    Integer deleteById(int id);
+    Integer deleteByTitle(String title);
 
 }
 

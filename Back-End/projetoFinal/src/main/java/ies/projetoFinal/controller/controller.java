@@ -1,7 +1,6 @@
 package ies.projetoFinal.controller;
 
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -26,22 +25,16 @@ public class controller {
         return meetService.getMeetings();
     }
 
-    // Cria reunião
-    @PostMapping("/meetings/create")
-    public @ResponseBody Map<String, String> createMeeting(@RequestBody Meet meet) {
-        return meetService.createMeeting(meet);
-    }
-
     // Reunião por ID
     @GetMapping("/meetings/{id}")
-    public Meet getMeetingById(@PathVariable int id) {
-        return meetService.getMeetingById(id);
+    public Meet getMeetingByName(@PathVariable String title) {
+        return meetService.getMeetingByTitle(title);
     }
 
     // Exclui reunião por ID
     @DeleteMapping("/meetings/{id}/delete")
-    public Integer deleteMeetingById(@PathVariable int id) {
-        return meetService.deleteMeetingById(id);
+    public Integer deleteMeetingByName(@PathVariable String title) {
+        return meetService.deleteMeetingByTitle(title);
     }
 
     // ========================== Contatos ==========================
@@ -52,21 +45,15 @@ public class controller {
         return contactService.getContacts();
     }
 
-    // Cria contato
-    @PostMapping("/contacts/create")
-    public @ResponseBody Map<String, String> createContact(@RequestBody Contact contact) {
-        return contactService.createContact(contact);
-    }
-
     // Contato por ID
     @GetMapping("/contacts/{id}")
-    public Contact getContactById(@PathVariable int id) {
-        return contactService.getContactById(id);
+    public Contact getContactById(@PathVariable String name) {
+        return contactService.getContactByName(name);
     }
 
     // Exclui contato por ID
     @DeleteMapping("/contacts/{id}/delete")
-    public Integer deleteContactById(@PathVariable int id) {
-        return contactService.deleteContactById(id);
+    public Integer deleteContactById(@PathVariable String name) {
+        return contactService.deleteContactByName(name);
     }
 }

@@ -10,11 +10,11 @@ public class Contact {
 
     @Id
     private int _id;
+
     private String name;
     private String email;
 
-    public Contact(int _id, String name, String email) {
-        this._id = _id;
+    public Contact(String name, String email) {
         this.name = name;
         this.email = email;
     }

@@ -1,7 +1,6 @@
 package ies.projetoFinal.service;
 
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,16 +18,12 @@ public class ContactService {
         return contactRepository.findAll();
     }
 
-    public Map<String, String> createContact(Contact contact) {
-        return contactRepository.save(contact);
+    public Contact getContactByName(String name) {
+        return contactRepository.findByName(name);
     }
 
-    public Contact getContactById(int id) {
-        return contactRepository.findById(id);
-    }
-
-    public Integer deleteContactById(int id) {
-        return contactRepository.deleteById(id);
+    public Integer deleteContactByName(String name) {
+        return contactRepository.deleteByName(name);
     }
 
 }

@@ -10,6 +10,7 @@ public class Meet {
 
     @Id
     private int _id;
+
     private String title;
     private String dia;
     private String hora;
@@ -17,8 +18,7 @@ public class Meet {
     private String duracaoMinutos;
     private String senha;
 
-    public Meet(int _id, String title, String dia, String hora, String duracaoHoras, String duracaoMinutos, String senha) {
-        this._id = _id;
+    public Meet(String title, String dia, String hora, String duracaoHoras, String duracaoMinutos, String senha) {
         this.title = title;
         this.dia = dia;
         this.hora = hora;

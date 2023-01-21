@@ -9,8 +9,7 @@ public interface ContactRepository extends MongoRepository<Contact, String> {
 
     List<Contact> findAll();
 
-    Contact findById(int id);
+    Contact findByName(String name);
 
-    Integer deleteById(int id);
-
+    Integer deleteByName(String name);
 }
