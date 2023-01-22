@@ -5,7 +5,7 @@ import javax.persistence.*;
 import lombok.Data;
 
 @Data
-@Document("meet")
+@Document(collection = "meet")
 public class Meet {
 
     @Id

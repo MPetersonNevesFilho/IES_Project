@@ -22,7 +22,10 @@ export default class RowMeetings extends React.Component {
 
     getMeetings = async () => {
         try {
-            const response = await axios.get("http://localhost:8080/meetings");
+            const response = await axios.get("http://localhost:8080/meetings",{
+                withCredentials: true
+            });
+            console.log(response);
         } catch (error) {
             console.log(error);
         }
