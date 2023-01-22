@@ -8,14 +8,15 @@ import Navbar from 'react-bootstrap/Navbar';
 import { ReactComponent as Icon } from "../img/icons8-pesquisar.svg"
 
 function NavbarMeetings(params) {
-
+    const reunioesAntigas = params.ra;
+    const reunioesFuturas = params.rf;
 
 
     return (<>
         <Navbar bg="light" expand="lg">
             <Container fluid>
-                <Button variant="outline-secondary" className="me-2">Reuniões passadas</Button>
-                <Button variant="outline-primary" className="me-2">Futuras Reuniões</Button>
+                <Button variant="outline-secondary" className="me-2" onClick={() => reunioesAntigas()}>Reuniões passadas</Button>
+                <Button variant="outline-primary" className="me-2" onClick={() => reunioesFuturas()}>Futuras Reuniões</Button>
                 <Button variant="outline-success" className="me-2">Agendar uma Reunião</Button>
 
                 <Form className="d-flex">

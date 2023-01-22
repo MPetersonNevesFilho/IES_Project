@@ -12,11 +12,28 @@ body{
     background-color: rgb(214, 214, 214);
     width: 70%;
     height: 100%;
+    margin-left: 15%;
 
 }
 
 .contentMeetings{
     padding: 2em 0,2em 0,2em 0,2em;
+}
+
+.dateMeetings{
+    display: flex;
+    padding: 0.2em 2em 0.2em 0.2em;
+    align-items: center;
+    background-color: #E7E7E7;
+    border-radius: 0 0 1em 1em;
+}
+.dateMeetings p {
+    margin: 0;
+    padding: 0;
+    padding-left: 1em;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #4F4F4F;
 }
 
 .rowMeetings{

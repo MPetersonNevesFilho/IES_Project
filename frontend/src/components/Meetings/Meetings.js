@@ -1,11 +1,49 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
 import NavbarMeetings from './NavbarMeetings';
+import RowMeetings from './RowMeetings.js';
 import './Meetings.css';
 
 
 function Meetings() {
 
+    var rowInfo = [
+
+            {
+                id: 1,
+                date: "23/01/2023",
+                title: "Reunião de Planejamento",
+                time: "10:00",
+                durationHours: "1",
+                durationMinutes: "30",
+            },
+
+            {
+                id: 2,
+                date: "23/01/2023",
+                title: "Reunião de Desenvolvimento",
+                time: "8:00",
+                durationHours: "2",
+                durationMinutes: "20",
+            },
+
+            {
+                id: 3,
+                date: "22/01/2023",
+                title: "Reunião de Teste",
+                time: "16:00",
+                durationHours: "0",
+                durationMinutes: "30",
+            }
+
+    ]
+
+    function reunioesAntigas() {
+        console.log("reunioesAntigas")
+    }
+
+    function reunioesFuturas() {
+        console.log("reunioesFuturas")
+    }
 
 
 
@@ -16,23 +54,10 @@ function Meetings() {
                 <h1>Reuniões</h1>
             </div>
             <div className="navbarMeetings">
-                <NavbarMeetings />
+                <NavbarMeetings ra={reunioesAntigas} rf={reunioesFuturas}/>
             </div>
             <div className="contentMeetings">
-                <div className="rowMeetings">
-                    <div className='rowMeetingsTime'>
-                        <h5>13:00 - 14:00</h5>
-                    </div>
-                    <div className='rowMeetingsTitle'>
-                        <h4>Título da Reunião</h4>
-                        <p>Reunião Id</p>
-                    </div>
-                    <div className='rowMeetingsButtons'>
-                        <Button variant="success">Iniciar</Button>
-                        <Button variant="outline-primary">Editar</Button>
-                        <Button variant="outline-danger">Excluir</Button>
-                    </div>
-                </div>
+                <RowMeetings meetings={rowInfo} />
             </div>
         </div>
     </>
