@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 
 import Row from './Row.js';
@@ -18,8 +19,21 @@ export default class RowMeetings extends React.Component {
         }
     }
 
+
+    getMeetings = async () => {
+        console.log("getMeetings");
+
+        try {
+            const response = await axios.get("http://localhost:8080/meetings");
+            console.log(response);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     componentDidMount() {
         this.organizeMeetings();
+        this.getMeetings();
     }
 
     organizeMeetings = () => {

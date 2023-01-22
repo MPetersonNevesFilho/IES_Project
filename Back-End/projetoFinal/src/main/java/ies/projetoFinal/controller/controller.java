@@ -26,14 +26,14 @@ public class controller {
     }
 
     // Reunião por ID
-    @GetMapping("/meetings/{id}")
-    public Meet getMeetingByName(@PathVariable String title) {
+    @GetMapping("/meetings_id")
+    public Meet getMeetingByName(@RequestBody String title) {
         return meetService.getMeetingByTitle(title);
     }
 
     // Exclui reunião por ID
-    @DeleteMapping("/meetings/{id}/delete")
-    public Integer deleteMeetingByName(@PathVariable String title) {
+    @DeleteMapping("/meetings_delete")
+    public Integer deleteMeetingByName(@RequestBody String title) {
         return meetService.deleteMeetingByTitle(title);
     }
 
