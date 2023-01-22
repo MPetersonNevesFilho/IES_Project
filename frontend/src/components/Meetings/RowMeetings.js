@@ -21,11 +21,8 @@ export default class RowMeetings extends React.Component {
 
 
     getMeetings = async () => {
-        console.log("getMeetings");
-
         try {
             const response = await axios.get("http://localhost:8080/meetings");
-            console.log(response);
         } catch (error) {
             console.log(error);
         }
@@ -54,7 +51,6 @@ export default class RowMeetings extends React.Component {
             })
             dateMeetings[date] = meetingsDate;
         })
-        console.log(dateMeetings);
 
         this.setState({meetings: dateMeetings});
     }

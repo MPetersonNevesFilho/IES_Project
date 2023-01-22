@@ -12,7 +12,6 @@ function Row(params) {
 
     // Sum time and duration
     function sumTimeAndDuration() {
-        console.log(row)
         var time = row.time.split(":");
         var hours = time[0];
         var minutes = time[1];
