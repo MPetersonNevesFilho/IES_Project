@@ -18,21 +18,18 @@ export default class RowMeetings extends React.Component {
         }
     }
 
-<<<<<<< HEAD
 
     getMeetings = async () => {
+        console.log("getMeetings");
+
         try {
-            const response = await axios.get("http://localhost:8080/meetings",{
-                withCredentials: true
-            });
+            const response = await axios.get("http://localhost:8080/meetings");
             console.log(response);
         } catch (error) {
             console.log(error);
         }
     }
 
-=======
->>>>>>> parent of 0d1a869 (Feat - Primeira versão da conexão entre frontend->spring->mongo)
     componentDidMount() {
         this.organizeMeetings();
     }
