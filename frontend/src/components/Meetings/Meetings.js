@@ -13,7 +13,7 @@ function Meetings() {
     <>
         <div className='tudoMeetings'>
             <div className="titleMeetings">
-                <h1>Meetings</h1>
+                <h1>Reuniões</h1>
             </div>
             <div className="navbarMeetings">
                 <NavbarMeetings />
