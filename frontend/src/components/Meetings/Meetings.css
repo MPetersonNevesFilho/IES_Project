@@ -2,6 +2,22 @@ body{
     margin: 0;
 }
 
+.tudoMeetings{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+    padding: 1em;
+    background-color: rgb(214, 214, 214);
+    width: 70%;
+    height: 100%;
+}
+
+.contentMeetings{
+    padding: 2em 0,2em 0,2em 0,2em;
+}
+
 .rowMeetings{
     display: flex;
     flex-direction: row;
@@ -10,6 +26,35 @@ body{
     align-items: center;
     align-content: center;
     margin: 0;
-    padding: 0;
+    padding: 0.2em 0.2em 0.2em 0.2em;
     background-color: antiquewhite;
+}
+.rowMeetings div Button{
+    margin-left: 0.5em;
+}
+.rowMeetings:hover h4{
+    text-decoration: underline;
+
+}
+.rowMeetingsTime{
+    margin: 0;
+    flex-grow: 1;
+    justify-content: flex-start;
+    flex-direction: column;
+    display: flex;
+    padding-bottom: 2.5em;
+}
+.rowMeetingsTime h5{
+    margin: 0;
+    justify-content: center;
+    display: flex;
+    padding: 0;
+}
+.rowMeetingsTitle{
+    flex-grow: 3;
+    padding-top: 0.5em;
+}
+
+.rowMeetingsButton{
+    flex-grow: 1;
 }
