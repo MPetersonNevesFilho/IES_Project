@@ -47,7 +47,6 @@ function Meetings() {
 
 
 
-
   return (
     <>
         <div className='tudoMeetings'>

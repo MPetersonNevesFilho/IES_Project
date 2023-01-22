@@ -1,4 +1,3 @@
-import axios from "axios";
 import React from "react";
 
 import Row from './Row.js';
@@ -19,6 +18,7 @@ export default class RowMeetings extends React.Component {
         }
     }
 
+<<<<<<< HEAD
 
     getMeetings = async () => {
         try {
@@ -31,9 +31,10 @@ export default class RowMeetings extends React.Component {
         }
     }
 
+=======
+>>>>>>> parent of 0d1a869 (Feat - Primeira versão da conexão entre frontend->spring->mongo)
     componentDidMount() {
         this.organizeMeetings();
-        this.getMeetings();
     }
 
     organizeMeetings = () => {
