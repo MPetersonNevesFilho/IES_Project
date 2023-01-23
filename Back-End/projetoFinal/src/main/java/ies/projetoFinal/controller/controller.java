@@ -21,33 +21,33 @@ public class controller {
     private ContactService contactService;
 
     // Lista de Reuniões
-    @GetMapping("/meetings/all")
+    @GetMapping("/meetings")
     public List<Meet> getMeetings() {
-        return meetService.getMeetings();
+        List<Meet> teste = meetService.getMeetings();
+        return teste;
     }
 
     // Reunião por ID
-    @GetMapping("/meetings_id")
+    @GetMapping("/meetings/id")
     public Optional<Meet> getMeetingByName(@RequestBody String id) {
         return meetService.getMeetingByTitle(id);
     }
 
     // Atualiza reunião por ID
-    @PutMapping("/meetings/{id}/update")
+    @PutMapping("/meetings/{id}")
     public Meet updateMeetingByName(@PathVariable String id, @RequestBody Meet meet) {
         return meetService.updateMeetingByTitle(id, meet);
     }
 
     // Cria reunião
-    @PostMapping("/meetings/create")
+    @PostMapping("/meetings")
     public Meet createMeeting(@RequestBody Meet meet) {
-        System.out.println(meet);
         Meet teste = meetService.createMeeting(meet);
         return teste;
     }
 
     // Exclui reunião por ID
-    @DeleteMapping("/meetings/delete")
+    @DeleteMapping("/meetings")
     public void deleteMeetingByName(@RequestBody String id) {
         meetService.deleteMeetingByTitle(id);
     }
