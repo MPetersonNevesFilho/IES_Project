@@ -1,5 +1,6 @@
 body{
     margin: 0;
+    background-color: #E7E7E7;
 }
 
 .tudoMeetings{
@@ -9,22 +10,27 @@ body{
     justify-content: space-between;
     margin: 0;
     padding: 1em;
-    background-color: rgb(214, 214, 214);
-    width: 70%;
+    background-color: #f8f9fb;
+    width: 60%;
     height: 100%;
-    margin-left: 15%;
-
+    margin-left: 20%;
+    border-radius: 0 0 1em 1em;
 }
 
 .contentMeetings{
-    padding: 2em 0,2em 0,2em 0,2em;
+    padding: 2em 20em 0,2em 0,2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 .dateMeetings{
     display: flex;
     padding: 0.2em 2em 0.2em 0.2em;
     align-items: center;
-    background-color: #E7E7E7;
+    background-color: #cdcdcd;
+    margin: 0.5em 0 0.5em 0;
     border-radius: 0 0 1em 1em;
 }
 .dateMeetings p {
@@ -43,20 +49,33 @@ body{
     justify-content: space-between;
     align-items: center;
     align-content: center;
-    margin: 0;
+    margin-bottom: 0.5em;
     padding: 0.2em 2em 0.2em 0.2em;
-    background-color: antiquewhite;
+    background-color: rgb(238, 236, 236);
+    border-radius: 1em;
+}
+.rowMeetings:hover{
+    animation: smoothGrow 0.3s;
+    animation-fill-mode: forwards;
+}
+@keyframes smoothGrow {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+        background-color: #e0e6ff;
+    }
 }
 .rowMeetings div Button{
     margin-left: 0.5em;
 }
 .rowMeetings:hover h4{
     text-decoration: underline;
-
 }
 .rowMeetingsTime{
     margin: 0;
-    flex-grow: 1;
+    width: 13em;
     justify-content: flex-start;
     flex-direction: column;
     display: flex;
@@ -71,8 +90,20 @@ body{
 .rowMeetingsTitle{
     flex-grow: 3;
     padding-top: 0.5em;
+    text-align: left;
+    margin-right: 2em;
 }
 
 .rowMeetingsButton{
     flex-grow: 1;
+}
+
+.NavbarMeetings{
+    display: flex;
+    border-radius: 1em;
+    width: 50em;
+    justify-content: center;
+    align-items: center;
+    background-color: #4F4F4F;
+    margin-left: 3em;
 }

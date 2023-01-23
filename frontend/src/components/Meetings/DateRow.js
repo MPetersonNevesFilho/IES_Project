@@ -6,9 +6,13 @@ export default class DateRow extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            date: props.info.date,
-            dataRow: props.info.data,
+            date: props.children[0].dia,
+            dataRow: props.children,
         }
+    }
+
+    componentDidMount() {
+        //console.log(this.state.date);
     }
 
     render() {
@@ -17,9 +21,9 @@ export default class DateRow extends React.Component {
                 <p>{this.state.date}</p>
             </div>
             <div>{
-                this.state.dataRow.map((data) => {
+                this.state.dataRow.map((data, index) => {
                     return(<>
-                        <Row row={data}/>
+                        <Row key={index} row={data}/>
                     </>)
                 })
             }

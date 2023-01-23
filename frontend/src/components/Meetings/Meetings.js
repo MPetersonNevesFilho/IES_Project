@@ -1,12 +1,12 @@
 import React from 'react';
 import NavbarMeetings from './NavbarMeetings';
 import RowMeetings from './RowMeetings.js';
-import axios from "axios";
 import { v4 as uuidv4 } from 'uuid';
 import './Meetings.css';
 
 
 function Meetings() {
+    const [key, setKey] = React.useState(true);
 
     var rowInfo = [
 
@@ -16,58 +16,63 @@ function Meetings() {
                 dia: "28/01/2023",
                 horaInicial: "10:00",
                 horaFinal: "11:30",
-                senha: "123456",
+                senha: uuidv4().substring(30, 36),
             },
 
             {
                 id: uuidv4().substring(24, 36),
-                title: "Reunião de Planejamento",
+                title: "Planejamento",
                 dia: "28/01/2023",
                 horaInicial: "08:00",
                 horaFinal: "10:00",
-                senha: "123456",
+                senha: uuidv4().substring(30, 36),
             },
 
             {
                 id: uuidv4().substring(24, 36),
-                title: "Reunião de Revisão",
-                dia: "23/01/2023",
+                title: "Revisão do Projeto",
+                dia: "22/01/2023",
                 horaInicial: "14:00",
                 horaFinal: "14:30",
-                senha: "123456",
+                senha: uuidv4().substring(30, 36),
             },
 
             {
                 id: uuidv4().substring(24, 36),
-                title: "Reunião de Redes",
-                dia: "25/01/2023",
+                title: "Redes",
+                dia: "27/01/2023",
                 horaInicial: "17:00",
                 horaFinal: "16:30",
-                senha: "123456",
+                senha: uuidv4().substring(30, 36),
             },
 
             {
                 id: uuidv4().substring(24, 36),
-                title: "Reunião de Ies",
-                dia: "12/12/2022",
+                title: "Projeto IES",
+                dia: "12/01/2023",
                 horaInicial: "10:00",
                 horaFinal: "11:30",
-                senha: "123456",
+                senha: uuidv4().substring(30, 36),
             },
 
 
             {
                 id: uuidv4().substring(24, 36),
                 title: "Reunião de Testagem",
-                dia: "21/12/2022",
+                dia: "02/01/2023",
                 horaInicial: "16:30",
                 horaFinal: "18:30",
-                senha: "123456",
+                senha: uuidv4().substring(30, 36),
             }
 
     ]
 
     const reunioesAntigas = async ()  => {
+        console.log("getMeetings");
+        setKey(false);
+
+
+        /*
 
         console.log("getMeetings");
         console.log(uuidv4().substring(24, 36));
@@ -86,17 +91,13 @@ function Meetings() {
             console.log(error);
         }
 
+        */
+
     }
 
     const reunioesFuturas = async () => {
         console.log("reunioesFuturas")
-
-        try {
-            const response = await axios.post("http://localhost:8080/meetings");
-            console.log(response);
-        } catch (error) {
-            console.log(error);
-        }
+        setKey(true);
     }
 
 
@@ -111,7 +112,7 @@ function Meetings() {
                 <NavbarMeetings ra={reunioesAntigas} rf={reunioesFuturas}/>
             </div>
             <div className="contentMeetings">
-                <RowMeetings meetings={rowInfo} />
+                <RowMeetings meetings={rowInfo} turnKey={key}/>
             </div>
         </div>
     </>

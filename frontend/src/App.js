@@ -1,14 +1,13 @@
 import React from 'react';
-import NavBar from './components/NavBar/NavBar.js';
-import Meetings from './components/Meetings/Meetings.js';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Routes from './components/routes/Routes.js';
 
 function App() {
+
   return (
     <>
-      <NavBar />
-      <Meetings />
+      <Routes />
     </>
   );
 }
