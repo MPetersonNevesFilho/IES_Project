@@ -5,8 +5,8 @@ import Button from 'react-bootstrap/Button';
 
 function Row(params) {
     const row = params.row;
-    const hora = row.time;
-    const horaFinal = sumTimeAndDuration();
+    const horaInicial = row.horaInicial;
+    const horaFinal = row.horaFinal;
     const title = row.title;
     const id = row.id;
 
@@ -32,7 +32,7 @@ function Row(params) {
         <div>
         <div className="rowMeetings">
                 <div className='rowMeetingsTime'>
-                    <h5>{hora} - {horaFinal}</h5>
+                    <h5>{horaInicial} - {horaFinal}</h5>
                 </div>
                 <div className='rowMeetingsTitle'>
                     <h4>{title}</h4>

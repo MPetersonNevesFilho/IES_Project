@@ -6,8 +6,8 @@ export default class DateRow extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            date: props.date,
-
+            date: props.info.date,
+            dataRow: props.info.data,
         }
     }
 
@@ -16,8 +16,13 @@ export default class DateRow extends React.Component {
             <div className="dateMeetings">
                 <p>{this.state.date}</p>
             </div>
-            <div>
-
+            <div>{
+                this.state.dataRow.map((data) => {
+                    return(<>
+                        <Row row={data}/>
+                    </>)
+                })
+            }
             </div>
         </>)
     }

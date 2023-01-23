@@ -1,20 +1,13 @@
 import React from "react";
 
-import Row from './Row.js';
+import DateRow from './DateRow.js';
 
 export default class RowMeetings extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             meetings: props.meetings,
-            rowTeste: {
-                id: 1,
-                date: "23/01/2023",
-                title: "Reunião de Planejamento",
-                time: "10:00",
-                durationHours: "1",
-                durationMinutes: "30",
-            }
+            dateMeetings: [],
         }
     }
 
@@ -27,31 +20,35 @@ export default class RowMeetings extends React.Component {
         var meetings = this.state.meetings;
         var dateMeetings = [];
         meetings.forEach((meeting) => {
-            if(!dateMeetings.includes(meeting.date)) {
-                dateMeetings.push(meeting.date);
+            if(!dateMeetings.includes(meeting.dia)) {
+                dateMeetings.push(meeting.dia);
             }
         })
-        // sort dates
-        dateMeetings.forEach((date) => {
-            var meetingsDate = [];
-            meetings.forEach((meeting) => {
-                if(meeting.date === date) {
-                    meetingsDate.push(meeting);
-                }
-            })
-            dateMeetings[date] = meetingsDate;
-        })
+        console.log(dateMeetings)
+        // sort dates growing
+        dateMeetings.sort((a, b) => {
+            var A = a.split("/");
+            A = new Date(+A[2], A[1] - 1, +A[0])
+            var B = b.split("/");
+            B = new Date(+B[2], B[1] - 1, +B[0])
+            console.log(A - B)
+            return A - B;
+        });
 
+        console.log(dateMeetings)
         this.setState({meetings: dateMeetings});
     }
 
     render() {
         return(<>
             <div>
-                <div className="dateMeetings">
-                    <p>22/01/2023</p>
-                </div>
-                <Row row={this.state.rowTeste}/>
+            {
+                this.state.dateMeetings.map((date) => {
+                    return (<>
+                        <DateRow info={date}/>
+                    </>)
+                })
+            }
             </div>
         </>)
     }
