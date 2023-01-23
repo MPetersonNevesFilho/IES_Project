@@ -9,21 +9,20 @@ import lombok.Data;
 public class Meet {
 
     @Id
-    private int _id;
+    private String _id;
 
     private String title;
     private String dia;
-    private String hora;
-    private String duracaoHoras;
-    private String duracaoMinutos;
+    private String horaInicial;
+    private String horaFinal;
     private String senha;
 
-    public Meet(String title, String dia, String hora, String duracaoHoras, String duracaoMinutos, String senha) {
+    public Meet(String id, String title, String dia, String horaInicial, String horaFinal, String senha) {
+        this._id = id;
         this.title = title;
         this.dia = dia;
-        this.hora = hora;
-        this.duracaoHoras = duracaoHoras;
-        this.duracaoMinutos = duracaoMinutos;
+        this.horaInicial = horaInicial;
+        this.horaFinal = horaFinal;
         this.senha = senha;
     }
 

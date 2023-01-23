@@ -1,6 +1,8 @@
 import React from 'react';
 import NavbarMeetings from './NavbarMeetings';
 import RowMeetings from './RowMeetings.js';
+import axios from "axios";
+import { v4 as uuidv4 } from 'uuid';
 import './Meetings.css';
 
 
@@ -37,12 +39,36 @@ function Meetings() {
 
     ]
 
-    function reunioesAntigas() {
-        console.log("reunioesAntigas")
+    const reunioesAntigas = async ()  => {
+
+        console.log("getMeetings");
+        console.log(uuidv4().substring(24, 36));
+
+        try {
+            const response = await axios.post("http://localhost:8080/meetings/create/", {
+                "id": uuidv4().substring(24, 36),
+                "title": "Reunião de Teste",
+                "dia": "23/01/2023",
+                "horaInicial": "10:00",
+                "horaFinal": "11:30",
+                "senha": "123456",
+            });
+            console.log(response);
+        } catch (error) {
+            console.log(error);
+        }
+
     }
 
-    function reunioesFuturas() {
+    const reunioesFuturas = async () => {
         console.log("reunioesFuturas")
+
+        try {
+            const response = await axios.get("http://localhost:8080/meetings/delete", "c83f6466c0bb");
+            console.log(response);
+        } catch (error) {
+            console.log(error);
+        }
     }
 
 

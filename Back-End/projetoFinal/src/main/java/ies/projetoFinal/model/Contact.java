@@ -9,12 +9,13 @@ import lombok.Data;
 public class Contact {
 
     @Id
-    private int _id;
+    private String _id;
 
     public String name;
     public String email;
 
-    public Contact(String name, String email) {
+    public Contact(String id, String name, String email) {
+        this._id = id;
         this.name = name;
         this.email = email;
     }
