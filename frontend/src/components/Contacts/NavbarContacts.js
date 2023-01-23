@@ -5,12 +5,12 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Navbar from 'react-bootstrap/Navbar';
 
-import './Meetings.css';
+import './Contacts.css';
 
 
 import { ReactComponent as Icon } from "../img/icons8-pesquisar.svg"
 
-function NavbarMeetings(params) {
+function NavbarContacts(params) {
     const reunioesAntigas = params.ra;
     const reunioesFuturas = params.rf;
 
@@ -37,13 +37,11 @@ function NavbarMeetings(params) {
                         style={{width: '9em'}}
                         className="me-2"
                         />
-                        <Button variant="outline-info">
-                            <Icon style={{maxWidth:'2em', maxHeight:'2em'}}/>
-                        </Button>
+                        <Button variant="outline-info"><Icon style={{maxWidth:'2em', maxHeight:'2em'}}/></Button>
                     </Form>
                 </Container>
             </Navbar>
         </div>
     </>)
 }
-export default NavbarMeetings;
+export default NavbarContacts;
