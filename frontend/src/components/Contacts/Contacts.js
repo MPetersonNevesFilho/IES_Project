@@ -12,74 +12,59 @@ function Contacts() {
 
             {
                 id: uuidv4().substring(24, 36),
-                title: "Reunião de Teste",
-                dia: "28/01/2023",
-                horaInicial: "10:00",
-                horaFinal: "11:30",
-                senha: uuidv4().substring(30, 36),
+                name: "João da Silva",
+                email: "jsilva@proton.me",
             },
-
             {
                 id: uuidv4().substring(24, 36),
-                title: "Planejamento",
-                dia: "28/01/2023",
-                horaInicial: "08:00",
-                horaFinal: "10:00",
-                senha: uuidv4().substring(30, 36),
+                name: "Maria da Silva",
+                email: "msilva@gmail.com",
             },
-
             {
                 id: uuidv4().substring(24, 36),
-                title: "Revisão do Projeto",
-                dia: "22/01/2023",
-                horaInicial: "14:00",
-                horaFinal: "14:30",
-                senha: uuidv4().substring(30, 36),
+                name: "Pedro da Silva",
+                email: "psilva@gmail.com",
             },
-
             {
                 id: uuidv4().substring(24, 36),
-                title: "Redes",
-                dia: "27/01/2023",
-                horaInicial: "17:00",
-                horaFinal: "16:30",
-                senha: uuidv4().substring(30, 36),
+                name: "Ana da Silva",
+                email: "asilva@proton.me",
             },
-
             {
                 id: uuidv4().substring(24, 36),
-                title: "Projeto IES",
-                dia: "12/01/2023",
-                horaInicial: "10:00",
-                horaFinal: "11:30",
-                senha: uuidv4().substring(30, 36),
+                name: "Rui da Silva",
+                email: "rsilva@gmail.com",
             },
-
-
             {
                 id: uuidv4().substring(24, 36),
-                title: "Reunião de Testagem",
-                dia: "02/01/2023",
-                horaInicial: "16:30",
-                horaFinal: "18:30",
-                senha: uuidv4().substring(30, 36),
-            }
-
+                name: "André da Silva",
+                email: "asilva@gmail.com",
+            },
+            {
+                id: uuidv4().substring(24, 36),
+                name: "Victor da Silva",
+                email: "vsilva@yahoo.com.pt",
+            },
+            {
+                id: uuidv4().substring(24, 36),
+                name: "Saulo da Silva",
+                email: "ssilva@gmail.com",
+            },
     ]
 
 
 
   return (
     <>
-        <div className='tudoMeetings'>
-            <div className="titleMeetings">
+        <div className='tudoContacts'>
+            <div className="titleContacts">
                 <h1>Contatos</h1>
             </div>
-            <div className="navbarMeetings">
+            <div className="navbarContacts">
                 <NavbarContacts/>
             </div>
-            <div className="contentMeetings">
-                <CardContacts meetings={rowInfo} turnKey={key}/>
+            <div className="contentContacts">
+                <CardContacts contact={rowInfo}/>
             </div>
         </div>
     </>
