@@ -64,14 +64,6 @@ export default function Card(param){
     }
 
     function apagar() {
-        var name = document.getElementById("nameFormCard").value;
-        var email = document.getElementById("emailFormCard").value;
-
-        if (name === "" || email === ""){
-            toast.dismiss();
-            toast.error("Preencha todos os campos!");
-            return;
-        }
         deleteContact(param.contact.id);
         setOpenDialog(false);
         toast.dismiss();
