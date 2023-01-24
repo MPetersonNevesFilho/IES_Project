@@ -15,6 +15,13 @@ export default class CardContacts extends React.Component {
         this.ordemAlfabetica();
     }
 
+    componentDidUpdate(prevProps) {
+        if (prevProps.contact !== this.props.contact) {
+        this.ordemAlfabetica();
+        }
+
+    }
+
     ordemAlfabetica = () => {
         this.setState({
             contacts: this.state.contacts.sort((a, b) => {
@@ -35,7 +42,7 @@ export default class CardContacts extends React.Component {
                 {
 
                     this.state.contacts.map((contact) => {
-                        return <Card contact={contact} />
+                        return <Card contact={contact} teste={this.teste}/>
                     })
 
                 }

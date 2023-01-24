@@ -7,17 +7,34 @@ import CardContacts from './CardContacts';
 
 
 const addContact = () => {
-    /*var name = document.getElementById("nameForm").value;
-    var email = document.getElementById("emailForm").value;
+    var name = document.getElementById("nameFormNav").value;
+    var email = document.getElementById("emailFormNav").value;
     var id = uuidv4().substring(24, 36);
     var newContact = {id, name, email};
-    rowInfo.push(newContact);*/
+    rowInfo.push(newContact);
     console.log(rowInfo);
+    return true;
 }
-export { addContact };
+const deleteContact = (id) => {
+    var index = rowInfo.findIndex((contact) => contact.id === id);
+    rowInfo.splice(index, 1);
+    console.log(rowInfo);
+    return true;
+}
+const editContact = (id) => {
+    var index = rowInfo.findIndex((contact) => contact.id === id);
+    var name = document.getElementById("nameFormCard").value;
+    var email = document.getElementById("emailFormCard").value;
+    rowInfo[index].name = name;
+    rowInfo[index].email = email;
+    console.log(rowInfo);
+    return true;
+}
+
+
+export { addContact, deleteContact, editContact };
 
 var rowInfo = [
-
     {
         id: uuidv4().substring(24, 36),
         name: "João da Silva",
@@ -63,16 +80,6 @@ var rowInfo = [
 function Contacts() {
 
 
-    const addContact = () => {
-        var name = document.getElementById("nameForm").value;
-        var email = document.getElementById("emailForm").value;
-        var id = uuidv4().substring(24, 36);
-        var newContact = {id, name, email};
-        rowInfo.push(newContact);
-        console.log(rowInfo);
-    }
-
-
 
   return (
     <>
@@ -84,7 +91,7 @@ function Contacts() {
                 <NavbarContacts/>
             </div>
             <div className="contentContacts">
-                <CardContacts contact={rowInfo}/>
+                <CardContacts contact={rowInfo} key={rowInfo}/>
             </div>
         </div>
     </>

@@ -68,3 +68,12 @@ body{
     font-size: 1em;
     padding: 0.4em;
 }
+
+.NavbarContacts{
+    display: flex;
+    border-radius: 1em;
+    width: 50em;
+    justify-content: right;
+    align-items: right;
+    margin-left: 3em;
+}
