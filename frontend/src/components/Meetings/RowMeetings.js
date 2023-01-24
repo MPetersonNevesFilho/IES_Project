@@ -17,8 +17,6 @@ export default class RowMeetings extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        console.log(prevProps.turnKey)
-        console.log(this.state.turnKey)
         if (prevProps.turnKey !== this.props.turnKey) {
             this.organizeMeetings();
         }
